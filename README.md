@@ -20,37 +20,41 @@
 > This is a showcase repository. The source code is private (personal project). It documents what the product does, how it's built and my role. Happy to walk through the code in an interview.
 
 <p align="center">
-  <img src="docs/screenshots/editor-live-preview.webp" width="100%" alt="ResumeCraft AI editor: step-by-step form on the left (Experience step with two jobs and bullet points) and a live A4 PDF preview of the resume on the right">
+  <img src="docs/screenshots/hero-dark.webp" width="100%" alt="ResumeCraft AI landing page in the dark theme: serif headline 'Build Your Perfect Resume with AI' on warm ink-black ruled paper, an ochre 'Get Started Free' button and a product shot of the editor with a live PDF preview">
 </p>
 
 <sub>All screenshots are real captures of the live app, using a made-up demo persona ("Alex Morgan").</sub>
 
 ## Screenshots
 
-<p align="center">
-  <img src="docs/screenshots/landing.webp" width="49%" alt="Landing page with the headline 'Build Your Perfect Resume with AI' and three feature cards: AI-powered enhancement, professional templates and a live preview editor">
-  <img src="docs/screenshots/new-resume-template-picker.webp" width="49%" alt="Create New Resume dialog with a title field, four template thumbnails (Modern, Classic, Minimal, Creative) and a paper size selector">
-</p>
+The app ships with a light and a dark theme ("Editorial Ink": warm paper and ink colours, Newsreader serif headings, Inter body text, ochre accent). It follows the system setting, and the moon/sun button switches it.
 
-<p align="center">
-  <img src="docs/screenshots/template-preview-creative.webp" width="49%" alt="Template preview modal rendering the Creative template as a real PDF with built-in sample data">
-  <img src="docs/screenshots/editor-creative-template-font-picker.webp" width="49%" alt="Editor with the Creative template applied and the font picker open, listing ATS-friendly sans-serif and serif fonts">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/ai-tailor-to-job.webp" width="49%" alt="Tailor to Job dialog with a pasted job description and an Analyze and Tailor button">
-  <img src="docs/screenshots/settings-bring-your-own-ai-key.webp" width="49%" alt="Settings page: language selector and AI configuration with provider dropdown open (OpenAI, Anthropic, Google, ZhiPu), model selector and API key field">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/sign-in-arabic-rtl.webp" width="49%" alt="Sign-in page in Arabic with a right-to-left layout: email and password form, Google sign-in and translated feature highlights">
-  <img src="docs/screenshots/editor-dark-mode.webp" width="49%" alt="Editor in dark mode with the PDF preview slightly dimmed">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/arrange-sections.webp" width="49%" alt="Arrange Sections modal with drag handles to reorder Experience, Education, Skills, Projects, Certifications and Languages, plus an input to add a custom section">
-  <img src="docs/screenshots/mobile-landing.webp" width="24%" alt="Landing page on a phone-sized screen">
-</p>
+<table>
+  <tr>
+    <th width="50%">Dark</th>
+    <th width="50%">Light</th>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/editor-dark.webp" alt="Editor in the dark theme: Experience step with two jobs and bullet points on the left, live A4 PDF preview of Alex Morgan's resume on a tinted background on the right"></td>
+    <td><img src="docs/screenshots/editor-light.webp" alt="Editor in the light theme: the same Experience step and live A4 PDF preview on a warm paper background"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/dashboard-dark.webp" alt="Dashboard in the dark theme: My Resumes with three resume cards (Minimal, Classic and Modern templates) and a dashed New Resume tile"></td>
+    <td><img src="docs/screenshots/dashboard-light.webp" alt="Dashboard in the light theme with the same three resume cards and the New Resume tile"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/signin-dark.webp" alt="Sign-in page in the dark theme: dark brand panel with feature highlights on the left, email and password form with Google sign-in on the right"></td>
+    <td><img src="docs/screenshots/signin-light.webp" alt="Sign-in page in the light theme: the same dark brand panel next to a light sign-in form"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/features-dark.webp" alt="Features section in the dark theme: three cards for AI-powered enhancement, professional templates and the live preview editor"></td>
+    <td><img src="docs/screenshots/features-light.webp" alt="Features section in the light theme with the same three cards"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/hero-dark.webp" alt="Landing page hero in the dark theme"></td>
+    <td><img src="docs/screenshots/hero-light.webp" alt="Landing page hero in the light theme: dark serif headline on warm paper, ink-black 'Get Started Free' button and the editor product shot"></td>
+  </tr>
+</table>
 
 ## Features
 
@@ -79,7 +83,7 @@
 - English and Arabic interface with a full right-to-left layout.
 - Arabic PDF output with translated section headings and an Arabic font (Amiri).
 - AI answers in the user's interface language.
-- Light and dark themes. On phones the editor gets a bottom action bar and a slide-up preview drawer.
+- Light and dark themes with a shared "Editorial Ink" look: warm paper and ink colours, serif headings and an ochre accent. On phones the editor gets a bottom action bar and a slide-up preview drawer.
 
 ## Architecture
 
@@ -129,7 +133,7 @@ More detail (request flows, data model, deployment) is in [docs/architecture.md]
 | Layer | Tech |
 |---|---|
 | Framework | Next.js 16 (App Router, Server Actions, standalone output), React 19, TypeScript |
-| UI | Tailwind CSS 4, shadcn/ui (Radix), lucide icons, vaul drawers, sonner toasts, next-themes |
+| UI | Tailwind CSS 4, shadcn/ui (Radix), lucide icons, vaul drawers, sonner toasts, next-themes, next/font (Newsreader + Inter) |
 | Editor | Tiptap (rich-text bullets), dnd-kit (drag-and-drop), react-hook-form + Zod |
 | PDF | @react-pdf/renderer (client preview and server export), self-hosted TTF fonts incl. Amiri for Arabic |
 | AI | Vercel AI SDK v6 (`ai`, `@ai-sdk/react`), providers: OpenAI, Anthropic, Google Gemini, Z.AI (GLM) |
